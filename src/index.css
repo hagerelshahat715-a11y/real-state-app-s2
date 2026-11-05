@@ -1,0 +1,30 @@
+/* في ملف globals.css مثلاً */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+ *{
+   
+ }
+body {
+  font-family: 'Lato', sans-serif;
+  
+}
+
+
+.slick-dots {
+  bottom: -35px !important;
+}
+
+.slick-dots li button:before {
+  font-size: 10px !important;
+  color: #E0E0E0 !important;
+  opacity: 1 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #8E1616 !important;
+}
