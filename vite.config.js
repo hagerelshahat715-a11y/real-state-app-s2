@@ -7,10 +7,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  // أضفنا السطر ده عشان مسارات الملفات تشتغل صح على Vercel وتتجنبي الشاشة البيضاء
-  base: './', 
   server: {
-    port: 3001,
+    port: 3000,
     proxy: {
       '/api': {
         target: 'https://white-seahorse-266682.hostingersite.com',
@@ -20,6 +18,6 @@ export default defineConfig({
     }
   },
   build: {
-    assetsInlineLimit: 0, 
+    assetsInlineLimit: 0,
   },
 })
