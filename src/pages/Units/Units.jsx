@@ -19,7 +19,7 @@ export default function Units() {
 
   const getUnits = async () => {
     try {
-      const response = await api.get("/unit");
+      const response = await api.get("/units");
       setUnits(response.data);
       setLoading(false);
     } catch (error) {
@@ -54,7 +54,6 @@ export default function Units() {
 
   return (
     <div className="bg-gray-50 min-h-screen pb-12">
-
       <div>
         <Hero
           bg={unitshome}
@@ -64,11 +63,9 @@ export default function Units() {
         />
       </div>
 
-      {/* شريط البحث المطابق لتصميم فجما */}
       <div className='max-w-[1366px] mx-auto px-4 mt-8 flex flex-col items-center gap-6'>
         <div className='w-full bg-white border border-[#EAEAEA] rounded-[12px] p-4 shadow-sm grid grid-cols-1 md:grid-cols-5 items-center gap-4 divide-y md:divide-y-0 md:divide-x divide-gray-100'>
           
-          {/* 1. حقل البحث بالاسم */}
           <div className='flex items-center gap-2 px-2 col-span-1 md:col-span-2'>
             <Search className='w-4 h-4 text-gray-400 shrink-0' />
             <input 
@@ -80,7 +77,6 @@ export default function Units() {
             />
           </div>
 
-          {/* 2. اختيار عدد غرف النوم */}
           <div className='px-2'>
             <select 
               value={bedrooms} 
@@ -95,7 +91,6 @@ export default function Units() {
             </select>
           </div>
 
-          {/* 3. حقل المطور */}
           <div className='px-2'>
             <input 
               type="text" 
@@ -106,7 +101,6 @@ export default function Units() {
             />
           </div>
 
-          {/* 4. حقل المنطقة (Zone) والسعر */}
           <div className='flex items-center justify-between px-2 gap-2'>
             <input 
               type="text" 
@@ -126,13 +120,11 @@ export default function Units() {
 
         </div>
 
-        {/* زر البحث الكبير */}
         <button className='w-full max-w-[400px] h-[48px] bg-[#8E1616] hover:bg-[#7a1313] text-white font-medium rounded-[8px] transition-colors shadow-md text-base'>
           Search
         </button>
       </div>
 
-      {/* شبكة الكروت (Cards Grid) */}
       <div className='max-w-[1366px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 justify-items-center'>
         {filteredUnits.length > 0 ? (
           filteredUnits.map((unit) => {
@@ -141,7 +133,6 @@ export default function Units() {
                 key={unit.id} 
                 className='w-full max-w-[442px] h-[529px] bg-white rounded-[16px] border border-[#EAEAEA] shadow-[0px_4px_4px_rgba(0,0,0,0.05)] p-5 flex flex-col justify-between'
               >
-                
                 <div className='relative w-full h-[240px] rounded-[12px] overflow-hidden'>
                   <img 
                     src={unit.images && unit.images[0]} 
@@ -187,7 +178,6 @@ export default function Units() {
                 >
                   View Details
                 </button>
-
               </div>
             );
           })
@@ -195,7 +185,6 @@ export default function Units() {
           <p className='text-center col-span-3 text-gray-500 py-10'>No units found matching your search</p>
         )}
       </div>
-
     </div>
   );
 }
