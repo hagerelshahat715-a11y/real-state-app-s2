@@ -7,6 +7,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  // أضفنا السطر ده عشان مسارات الملفات تشتغل صح على Vercel وتتجنبي الشاشة البيضاء
+  base: './', 
   server: {
     port: 3001,
     proxy: {
