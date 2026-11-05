@@ -1,5 +1,10 @@
 import axios from "axios";
+
 const api = axios.create({
-    baseURL: "/api/v1"
+  baseURL: "https://white-seahorse-266682.hostingersite.com/api",
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
+
 export default api;
